@@ -33,47 +33,56 @@
 // This is an object and the key is "quiz" and it's properties are variables. This key will be used to access its corresponding values.
 var quiz = [
     {
-        question1: "what is thing?", // The value of the question properties are "strings"
-        possibleA1: ["A","B","C","D"], // The value of possibleA properties are arrays
-        correctA1: "D" // The value of correctS properties may need to be boolean???
+        question: "what is thing?", // The value of the question properties are "strings"
+        possibleA: ["A","B","C","D"], // The value of possibleA properties are arrays
+        correctA: "D" // The value of correctS properties may need to be boolean???
     },
     {
-        question2: "what is thing?",
-        possibleA2: ["A","B","C","D"],
-        correctA2: "B"
+        question: "what is thing?",
+        possibleA: ["A","B","C","D"],
+        correctA: "B"
     },
     {
-        question3: "what is thing?",
-        possibleA3: ["A","B","C","D"],
-        correctA3: "A"
+        question: "what is thing?",
+        possibleA: ["A","B","C","D"],
+        correctA: "A"
     },
     {
-        question4: "what is thing?",
-        possibleA4: ["A","B","C","D"],
-        correctA4: "A"
+        question: "what is thing?",
+        possibleA: ["A","B","C","D"],
+        correctA: "A"
     },
 ]
 
 
-var button = document.getElementById('start');
+var button = document.getElementById('start'); // This is a button variable that accesses the "start" button from the html doc
 
-button.addEventListener('click', start);
+button.addEventListener('click', start); // The eListener demands that upon click of "start" button, a function named "start" will execute 
 
-// currentQuestion = "";
+currentQuestion = 0; // CurrentQ is set to the first index place of 0
+currentAnswer = 0; // CurrentA is set to the first index place of 0
 
 function start() {
     
-    for (var i = 0; i <= quiz.length; i++) {
-        currentQuestion = (Object.keys(quiz(question1))); // can't get this for loop to print properties on screen
- 
-    //   console.log("start now"); 
-    //   document.getElementById("questions").innerHTML = quiz; use this to replace content in container
-    }
-        document.getElementById("content").innerHTML = (currentQuestion);
-}   
+    for(var i=0; i < quiz.length; i++) {
+        // console.log(quiz[currentQuestion].question);
+        // currentQuestion++;
 
-// This for loop will iterate as many times as designated by the pwrdlength variable
-// Password is called and concatenated with the selectedCase string where a golbal math object is then used to select a random character within the specified index string
+        document.getElementById("questionContent").innerHTML = "<p>" + (quiz[currentQuestion].question) + "<p>" + "<p>" + (quiz[currentAnswer].possibleA) + "<p>";
+        currentQuestion++;
+        // document.getElementById("answerContent").innerHTML =(quiz[currentAnswer].possibleA);
+    }
+
+    var correctA = "";
+    
+    if (correctA === true) {
+        msg = "That is correct!";  
+    }
+    else {
+        msg = "Incorrect! -12 seconds!";  
+    }
+
+}   
 
 
 // document.write(i);
