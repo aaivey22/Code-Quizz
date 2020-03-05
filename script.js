@@ -29,26 +29,28 @@
 //     {},
 //     {},
 // ]
+
+// This is an object and the key is "quiz" and it's properties are variables. This key will be used to access its corresponding values.
 var quiz = [
     {
-        question1: "what is thing?",
-        possibleA1: ["A","B","C"],
-        correctA1: "D"
+        question1: "what is thing?", // The value of the question properties are "strings"
+        possibleA1: ["A","B","C","D"], // The value of possibleA properties are arrays
+        correctA1: "D" // The value of correctS properties may need to be boolean???
     },
     {
         question2: "what is thing?",
-        possibleA2: ["A","B","C"],
-        correctA2: "D"
+        possibleA2: ["A","B","C","D"],
+        correctA2: "B"
     },
     {
         question3: "what is thing?",
-        possibleA3: ["A","B","C"],
-        correctA3: "D"
+        possibleA3: ["A","B","C","D"],
+        correctA3: "A"
     },
     {
         question4: "what is thing?",
-        possibleA4: ["A","B","C"],
-        correctA3: "D"
+        possibleA4: ["A","B","C","D"],
+        correctA4: "A"
     },
 ]
 
@@ -57,15 +59,17 @@ var button = document.getElementById('start');
 
 button.addEventListener('click', start);
 
+// currentQuestion = "";
 
 function start() {
     
     for (var i = 0; i <= quiz.length; i++) {
-      document.querySelector("quiz").textContent = quiz; 
-      console.log("start now"); 
+        currentQuestion = (Object.keys(quiz(question1))); // can't get this for loop to print properties on screen
+ 
+    //   console.log("start now"); 
     //   document.getElementById("questions").innerHTML = quiz; use this to replace content in container
     }
-    
+        document.getElementById("content").innerHTML = (currentQuestion);
 }   
 
 // This for loop will iterate as many times as designated by the pwrdlength variable
